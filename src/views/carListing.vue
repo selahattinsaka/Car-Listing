@@ -19,7 +19,8 @@
               </div>
             </div>
             <div class="d-flex justify-content-end mx-2">
-              <button type="submit" class="btn btn-primary">Filtrele</button>
+              <button type="button" class="btn btn-primary" @click="filter">Filtrele</button>
+              <button type="button" class="btn btn-danger mx-3" @click="filterFlag = false">Filtreyi Temizle</button>
             </div>
           </form>
         </div>
@@ -38,7 +39,7 @@
             </tr>
           </thead>
           <tbody class="mb-5">
-            <tr v-for="el in $route.params.data" :key="el.id" class="cursor-pointer" @click="$router.push({ name: 'carDetails', params: { id: el.id } })">
+            <tr v-for="el in carListing" :key="el.id" class="cursor-pointer" @click="$router.push({ name: 'carDetails', params: { id: el.id } })">
               <td>
                 <img :src="el.photo.replace('{0}', photoSize)" height="100" width="100" class="card-img-top">
               </td>
@@ -58,12 +59,32 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'carDetails',
   data() {
     return {
       photoSize: '160x120',
+      vehicleYear: undefined,
+      city: undefined,
+      categoryId: undefined,
+      filterFlag: false,
+      filteredCarList: [],
     };
+  },
+  computed: {
+    carListing() {
+      return this.filterFlag ? this.filteredCarList.data : this.$store.state.carListing;
+    },
+  },
+  methods: {
+    async filter() {
+      // const url = `http://sandbox.arabamd.com/api/v1/listing?year=${this.vehicleYear}&categoryId=${this.categoryId}&city=${this.city}&take=50`;
+      const url = 'http://sandbox.arabamd.com/api/v1/listing?price=0&sort=1&sortDirection=0&take=50';
+      this.filterFlag = true;
+      this.filteredCarList = await axios(url);
+    },
   },
 
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-wrap car">
-    <div v-for="el in carDetails" :key="el.id" class="card cards" @click="$router.push({ name: 'carListing'})">
+    <div v-for="el in carDetails" :key="el.id" class="card cards" @click="$router.push({ name: 'carDetails', params: { id: el.id } })">
       <img :src="el.photo.replace('{0}', photoSize)" class="card-img-top">
       <div class="card-body">
         <div class="row">

@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+store.dispatch('SET_CAR_LISTING');
 
 Vue.config.productionTip = false;
 Vue.use(Snotify, {
