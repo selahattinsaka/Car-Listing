@@ -11,9 +11,19 @@ const routes = [
     component: Home,
   },
   {
+    path: '/car-showcase',
+    name: 'carShowcase',
+    component: () => import('../views/carShowcase.vue'),
+  },
+  {
     path: '/car-listing',
     name: 'carListing',
     component: () => import('../views/carListing.vue'),
+  },
+  {
+    path: '/car-details/:id?',
+    name: 'carDetails',
+    component: () => import('../views/carDetails.vue'),
   },
 
 ];

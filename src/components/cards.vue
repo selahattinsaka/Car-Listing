@@ -1,10 +1,23 @@
 <template>
-  <div>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" alt="...">
+  <div class="d-flex flex-wrap car">
+    <div v-for="el in carDetails" :key="el.id" class="card cards" @click="$router.push({ name: 'carListing'})">
+      <img :src="el.photo.replace('{0}', photoSize)" class="card-img-top">
       <div class="card-body">
-        <h5 class="card-title">Car Name</h5>
-        <p class="card-text">Car Details</p>
+        <div class="row">
+          <div class="col">
+            <span class="card-title">{{el.location.cityName}}</span>
+          </div>
+          <div class="col">
+            <div class="card-text justify-content-end">{{el.properties[2].value}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <p>{{el.modelName}}</p>
+        </div>
+        <div class="row">
+          <div class="position-absolute bottom-0 end-0">
+            <span class="text-danger">{{el.priceFormatted}}</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -12,7 +25,21 @@
 
 <script>
 export default {
-
+  name: 'cards',
+  props: {
+    carDetails: {
+      type: Array,
+      default: () => [],
+    },
+    photoSize: {
+      type: String,
+      default: '160x120',
+    },
+  },
+  data() {
+    return {
+    };
+  },
 };
 </script>
 

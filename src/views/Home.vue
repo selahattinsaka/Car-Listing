@@ -1,13 +1,13 @@
 <template>
-  <car-listing/>
+  <car-showcase/>
 </template>
 <script>
 
-import carListing from './carListing.vue';
+import carShowcase from './carShowcase.vue';
 
 export default {
   name: 'home',
-  components: { carListing },
+  components: { carShowcase },
 };
 </script>
 <style>
