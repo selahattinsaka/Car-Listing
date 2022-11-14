@@ -10,10 +10,20 @@
   overflow: auto;
   background-color: #f6f7f9;
 }
-.car-details {
-  height: calc(100vh - 50px);
+.car-details-height {
+  height: calc(100vh - 100px);
   overflow: auto;
+  background-color: #e6eaee;
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.img-fluid {
+  height: 600px !important;
+}
+.down-arrow-before::before {
+  content: '\25be ';
+}
+.down-arrow-after::after {
+  content: ' \25be';
 }

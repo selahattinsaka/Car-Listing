@@ -1,7 +1,7 @@
 <template>
   <div class="mt-3">
     <div class="container text-center">
-      <div class="d-flex justify-content-center text-danger">Vitrin</div>
+      <h3 class="d-flex justify-content-center text-danger">Vitrin</h3>
       <div>
         <router-link
           :to="{ name: 'carListing', params: { data: carDetails.data }}"
