@@ -1,5 +1,4 @@
 .car {
-  cursor: pointer;
   .cards {
     width: 14rem;
     margin: 10px;
@@ -15,7 +14,7 @@
   overflow: auto;
   background-color: #e6eaee;
 }
-.cursor-pointer {
+.cursor {
   cursor: pointer;
 }
 .img-fluid {
@@ -26,4 +25,7 @@
 }
 .down-arrow-after::after {
   content: ' \25be';
+}
+.row-color:hover {
+  background-color: #E5E7E9;
 }

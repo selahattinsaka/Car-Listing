@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5">
-    <div class="row car-details-height">
-      <div class="col-7 border">
+    <div class="row row-cols-2 row-cols-lg-7 g-2 g-lg-3">
+      <div class="col-sm-6 col-6 col-md-7 border">
         <h4>{{carDetails.title}}</h4>
         <div class="mt-3 row">
           <div class="col">
@@ -21,7 +21,7 @@
           <div class="mt-2" v-html="carDetails.text"></div>
         </div>
       </div>
-      <div class="col-5 p-4 border">
+      <div class="col-sm-6 col-md-5 p-4 border">
         <h4 class="text-danger">Araç Bilgisi</h4>
         <div class="row mb-2">
           <div class="col"><b>İlan Tarihi:</b></div>
